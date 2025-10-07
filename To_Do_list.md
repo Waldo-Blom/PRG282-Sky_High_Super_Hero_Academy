@@ -16,7 +16,7 @@
 ## About: - Waldo
 - [ ] 
 
-# Functionality:
+# Functionality To Do:
 ## Overall:
 - [ ] 
 
@@ -31,3 +31,8 @@
 
 ## About:
 - [ ] 
+
+# Repo To Do:
+- [ ] Update licence with the custom licence, see MLG32 repo for licence
+- [ ] Udpdate REAME.md
+- [ ] Create the Releases to release the app on Github (Ask Jaden how it is done)
