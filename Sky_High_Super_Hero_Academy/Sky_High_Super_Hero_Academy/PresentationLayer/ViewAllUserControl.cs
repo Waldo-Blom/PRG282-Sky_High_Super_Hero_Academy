@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sky_High_Super_Hero_Academy.PresentationLayer
 {
-    public partial class About : Form
+    public partial class ViewAllUserControl : UserControl
     {
-        public About()
+        public ViewAllUserControl()
         {
             InitializeComponent();
         }

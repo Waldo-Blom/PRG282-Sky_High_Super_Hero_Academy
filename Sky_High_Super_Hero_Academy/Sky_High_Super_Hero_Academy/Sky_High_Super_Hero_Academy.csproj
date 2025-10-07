@@ -46,32 +46,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PresentationLayer\AddHero.cs">
+    <Compile Include="PresentationLayer\MainApplciation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PresentationLayer\AddHero.Designer.cs">
-      <DependentUpon>AddHero.cs</DependentUpon>
+    <Compile Include="PresentationLayer\MainApplciation.Designer.cs">
+      <DependentUpon>MainApplciation.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\About.cs">
-      <SubType>Form</SubType>
+    <Compile Include="PresentationLayer\AddHeroUserControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PresentationLayer\About.Designer.cs">
-      <DependentUpon>About.cs</DependentUpon>
+    <Compile Include="PresentationLayer\AddHeroUserControl.Designer.cs">
+      <DependentUpon>AddHeroUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\HeroSummary.cs">
-      <SubType>Form</SubType>
+    <Compile Include="PresentationLayer\SummaryUserControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PresentationLayer\HeroSummary.Designer.cs">
-      <DependentUpon>HeroSummary.cs</DependentUpon>
+    <Compile Include="PresentationLayer\SummaryUserControl.Designer.cs">
+      <DependentUpon>SummaryUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\ViewAllHeroes.cs">
-      <SubType>Form</SubType>
+    <Compile Include="PresentationLayer\AboutUserControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PresentationLayer\ViewAllHeroes.Designer.cs">
-      <DependentUpon>ViewAllHeroes.cs</DependentUpon>
+    <Compile Include="PresentationLayer\AboutUserControl.Designer.cs">
+      <DependentUpon>AboutUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\ViewAllUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\ViewAllUserControl.Designer.cs">
+      <DependentUpon>ViewAllUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PresentationLayer\AboutUserControl.resx">
+      <DependentUpon>AboutUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\AddHeroUserControl.resx">
+      <DependentUpon>AddHeroUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\MainApplciation.resx">
+      <DependentUpon>MainApplciation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\SummaryUserControl.resx">
+      <DependentUpon>SummaryUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\ViewAllUserControl.resx">
+      <DependentUpon>ViewAllUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

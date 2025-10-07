@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sky_High_Super_Hero_Academy.PresentationLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Sky_High_Super_Hero_Academy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainApplciation());
         }
     }
 }
