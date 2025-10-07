@@ -26,5 +26,10 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
         {
 
         }
+
+        private void txtSuperpower_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

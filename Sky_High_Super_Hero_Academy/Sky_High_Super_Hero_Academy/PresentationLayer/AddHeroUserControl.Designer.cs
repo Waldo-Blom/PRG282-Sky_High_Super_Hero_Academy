@@ -28,25 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddHeroUserControl));
             this.pnlAddHero = new System.Windows.Forms.Panel();
-            this.pnlAddHeroTop = new System.Windows.Forms.Panel();
-            this.lblHeroID = new System.Windows.Forms.Label();
-            this.txtHeroID = new System.Windows.Forms.TextBox();
-            this.lblAge = new System.Windows.Forms.Label();
-            this.txtAge = new System.Windows.Forms.TextBox();
-            this.txtExamScore = new System.Windows.Forms.TextBox();
-            this.lblExamScore = new System.Windows.Forms.Label();
-            this.lblHeroName = new System.Windows.Forms.Label();
-            this.txtHeroName = new System.Windows.Forms.TextBox();
-            this.lblSuperpower = new System.Windows.Forms.Label();
-            this.txtSuperpower = new System.Windows.Forms.TextBox();
-            this.txtInfo = new System.Windows.Forms.TextBox();
-            this.btnAddSuperhero = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.lblAddNewHeadding = new System.Windows.Forms.Label();
+            this.btnAddSuperhero = new System.Windows.Forms.Button();
+            this.txtInfo = new System.Windows.Forms.TextBox();
+            this.txtSuperpower = new System.Windows.Forms.TextBox();
+            this.lblSuperpower = new System.Windows.Forms.Label();
+            this.txtHeroName = new System.Windows.Forms.TextBox();
+            this.lblHeroName = new System.Windows.Forms.Label();
+            this.lblExamScore = new System.Windows.Forms.Label();
+            this.txtExamScore = new System.Windows.Forms.TextBox();
+            this.txtAge = new System.Windows.Forms.TextBox();
+            this.lblAge = new System.Windows.Forms.Label();
+            this.txtHeroID = new System.Windows.Forms.TextBox();
+            this.lblHeroID = new System.Windows.Forms.Label();
+            this.pnlAddHeroTop = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblHeadingSubscript = new System.Windows.Forms.Label();
+            this.lblAddNewHeadding = new System.Windows.Forms.Label();
             this.pnlAddHero.SuspendLayout();
             this.pnlAddHeroTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlAddHero
@@ -67,76 +72,94 @@
             this.pnlAddHero.Controls.Add(this.txtHeroID);
             this.pnlAddHero.Controls.Add(this.lblHeroID);
             this.pnlAddHero.Controls.Add(this.pnlAddHeroTop);
-            this.pnlAddHero.Location = new System.Drawing.Point(149, 50);
+            this.pnlAddHero.Location = new System.Drawing.Point(120, 65);
             this.pnlAddHero.Name = "pnlAddHero";
-            this.pnlAddHero.Size = new System.Drawing.Size(866, 470);
+            this.pnlAddHero.Size = new System.Drawing.Size(945, 470);
             this.pnlAddHero.TabIndex = 1;
             // 
-            // pnlAddHeroTop
+            // btnClear
             // 
-            this.pnlAddHeroTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(184)))));
-            this.pnlAddHeroTop.Controls.Add(this.lblHeadingSubscript);
-            this.pnlAddHeroTop.Controls.Add(this.lblAddNewHeadding);
-            this.pnlAddHeroTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlAddHeroTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlAddHeroTop.Name = "pnlAddHeroTop";
-            this.pnlAddHeroTop.Size = new System.Drawing.Size(866, 84);
-            this.pnlAddHeroTop.TabIndex = 0;
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(64)))), ((int)(((byte)(84)))));
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.Red;
+            this.btnClear.Location = new System.Drawing.Point(681, 415);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(145, 27);
+            this.btnClear.TabIndex = 17;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
-            // lblHeroID
+            // btnAddSuperhero
             // 
-            this.lblHeroID.AutoSize = true;
-            this.lblHeroID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeroID.ForeColor = System.Drawing.Color.White;
-            this.lblHeroID.Location = new System.Drawing.Point(67, 124);
-            this.lblHeroID.Name = "lblHeroID";
-            this.lblHeroID.Size = new System.Drawing.Size(64, 17);
-            this.lblHeroID.TabIndex = 1;
-            this.lblHeroID.Text = "Hero ID";
+            this.btnAddSuperhero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(184)))));
+            this.btnAddSuperhero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSuperhero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSuperhero.ForeColor = System.Drawing.Color.White;
+            this.btnAddSuperhero.Location = new System.Drawing.Point(70, 415);
+            this.btnAddSuperhero.Name = "btnAddSuperhero";
+            this.btnAddSuperhero.Size = new System.Drawing.Size(605, 28);
+            this.btnAddSuperhero.TabIndex = 16;
+            this.btnAddSuperhero.Text = "Add Superhero";
+            this.btnAddSuperhero.UseVisualStyleBackColor = false;
             // 
-            // txtHeroID
+            // txtInfo
             // 
-            this.txtHeroID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(22)))), ((int)(((byte)(41)))));
-            this.txtHeroID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtHeroID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHeroID.ForeColor = System.Drawing.Color.White;
-            this.txtHeroID.Location = new System.Drawing.Point(70, 153);
-            this.txtHeroID.Name = "txtHeroID";
-            this.txtHeroID.Size = new System.Drawing.Size(270, 26);
-            this.txtHeroID.TabIndex = 6;
+            this.txtInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(22)))), ((int)(((byte)(41)))));
+            this.txtInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(209)))), ((int)(((byte)(235)))));
+            this.txtInfo.Location = new System.Drawing.Point(70, 370);
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.Size = new System.Drawing.Size(756, 26);
+            this.txtInfo.TabIndex = 15;
+            this.txtInfo.Text = "  Rank and Threat Level will be automatically calculated based on Exam Score";
+            this.txtInfo.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // lblAge
+            // txtSuperpower
             // 
-            this.lblAge.AutoSize = true;
-            this.lblAge.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.ForeColor = System.Drawing.Color.White;
-            this.lblAge.Location = new System.Drawing.Point(67, 212);
-            this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(37, 17);
-            this.lblAge.TabIndex = 7;
-            this.lblAge.Text = "Age";
+            this.txtSuperpower.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(22)))), ((int)(((byte)(41)))));
+            this.txtSuperpower.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSuperpower.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSuperpower.ForeColor = System.Drawing.Color.White;
+            this.txtSuperpower.Location = new System.Drawing.Point(526, 246);
+            this.txtSuperpower.Name = "txtSuperpower";
+            this.txtSuperpower.Size = new System.Drawing.Size(300, 26);
+            this.txtSuperpower.TabIndex = 14;
+            this.txtSuperpower.TextChanged += new System.EventHandler(this.txtSuperpower_TextChanged);
             // 
-            // txtAge
+            // lblSuperpower
             // 
-            this.txtAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(22)))), ((int)(((byte)(41)))));
-            this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAge.ForeColor = System.Drawing.Color.White;
-            this.txtAge.Location = new System.Drawing.Point(70, 246);
-            this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(270, 26);
-            this.txtAge.TabIndex = 8;
+            this.lblSuperpower.AutoSize = true;
+            this.lblSuperpower.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuperpower.ForeColor = System.Drawing.Color.White;
+            this.lblSuperpower.Location = new System.Drawing.Point(523, 212);
+            this.lblSuperpower.Name = "lblSuperpower";
+            this.lblSuperpower.Size = new System.Drawing.Size(98, 17);
+            this.lblSuperpower.TabIndex = 13;
+            this.lblSuperpower.Text = "Superpower";
             // 
-            // txtExamScore
+            // txtHeroName
             // 
-            this.txtExamScore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(22)))), ((int)(((byte)(41)))));
-            this.txtExamScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtExamScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtExamScore.ForeColor = System.Drawing.Color.White;
-            this.txtExamScore.Location = new System.Drawing.Point(70, 326);
-            this.txtExamScore.Name = "txtExamScore";
-            this.txtExamScore.Size = new System.Drawing.Size(705, 26);
-            this.txtExamScore.TabIndex = 9;
+            this.txtHeroName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(22)))), ((int)(((byte)(41)))));
+            this.txtHeroName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHeroName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHeroName.ForeColor = System.Drawing.Color.White;
+            this.txtHeroName.Location = new System.Drawing.Point(526, 153);
+            this.txtHeroName.Name = "txtHeroName";
+            this.txtHeroName.Size = new System.Drawing.Size(300, 26);
+            this.txtHeroName.TabIndex = 12;
+            // 
+            // lblHeroName
+            // 
+            this.lblHeroName.AutoSize = true;
+            this.lblHeroName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeroName.ForeColor = System.Drawing.Color.White;
+            this.lblHeroName.Location = new System.Drawing.Point(531, 124);
+            this.lblHeroName.Name = "lblHeroName";
+            this.lblHeroName.Size = new System.Drawing.Size(90, 17);
+            this.lblHeroName.TabIndex = 11;
+            this.lblHeroName.Text = "Hero Name";
             // 
             // lblExamScore
             // 
@@ -149,100 +172,91 @@
             this.lblExamScore.TabIndex = 10;
             this.lblExamScore.Text = "Exam Score (0 - 100)";
             // 
-            // lblHeroName
+            // txtExamScore
             // 
-            this.lblHeroName.AutoSize = true;
-            this.lblHeroName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeroName.ForeColor = System.Drawing.Color.White;
-            this.lblHeroName.Location = new System.Drawing.Point(502, 124);
-            this.lblHeroName.Name = "lblHeroName";
-            this.lblHeroName.Size = new System.Drawing.Size(90, 17);
-            this.lblHeroName.TabIndex = 11;
-            this.lblHeroName.Text = "Hero Name";
+            this.txtExamScore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(22)))), ((int)(((byte)(41)))));
+            this.txtExamScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtExamScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExamScore.ForeColor = System.Drawing.Color.White;
+            this.txtExamScore.Location = new System.Drawing.Point(70, 326);
+            this.txtExamScore.Name = "txtExamScore";
+            this.txtExamScore.Size = new System.Drawing.Size(756, 26);
+            this.txtExamScore.TabIndex = 9;
             // 
-            // txtHeroName
+            // txtAge
             // 
-            this.txtHeroName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(22)))), ((int)(((byte)(41)))));
-            this.txtHeroName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtHeroName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHeroName.ForeColor = System.Drawing.Color.White;
-            this.txtHeroName.Location = new System.Drawing.Point(505, 153);
-            this.txtHeroName.Name = "txtHeroName";
-            this.txtHeroName.Size = new System.Drawing.Size(270, 26);
-            this.txtHeroName.TabIndex = 12;
+            this.txtAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(22)))), ((int)(((byte)(41)))));
+            this.txtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAge.ForeColor = System.Drawing.Color.White;
+            this.txtAge.Location = new System.Drawing.Point(70, 246);
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(300, 26);
+            this.txtAge.TabIndex = 8;
             // 
-            // lblSuperpower
+            // lblAge
             // 
-            this.lblSuperpower.AutoSize = true;
-            this.lblSuperpower.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuperpower.ForeColor = System.Drawing.Color.White;
-            this.lblSuperpower.Location = new System.Drawing.Point(502, 212);
-            this.lblSuperpower.Name = "lblSuperpower";
-            this.lblSuperpower.Size = new System.Drawing.Size(98, 17);
-            this.lblSuperpower.TabIndex = 13;
-            this.lblSuperpower.Text = "Superpower";
+            this.lblAge.AutoSize = true;
+            this.lblAge.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAge.ForeColor = System.Drawing.Color.White;
+            this.lblAge.Location = new System.Drawing.Point(67, 212);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(37, 17);
+            this.lblAge.TabIndex = 7;
+            this.lblAge.Text = "Age";
             // 
-            // txtSuperpower
+            // txtHeroID
             // 
-            this.txtSuperpower.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(22)))), ((int)(((byte)(41)))));
-            this.txtSuperpower.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSuperpower.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSuperpower.ForeColor = System.Drawing.Color.White;
-            this.txtSuperpower.Location = new System.Drawing.Point(505, 246);
-            this.txtSuperpower.Name = "txtSuperpower";
-            this.txtSuperpower.Size = new System.Drawing.Size(270, 26);
-            this.txtSuperpower.TabIndex = 14;
+            this.txtHeroID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(22)))), ((int)(((byte)(41)))));
+            this.txtHeroID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHeroID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHeroID.ForeColor = System.Drawing.Color.White;
+            this.txtHeroID.Location = new System.Drawing.Point(70, 153);
+            this.txtHeroID.Name = "txtHeroID";
+            this.txtHeroID.Size = new System.Drawing.Size(300, 26);
+            this.txtHeroID.TabIndex = 6;
             // 
-            // txtInfo
+            // lblHeroID
             // 
-            this.txtInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(22)))), ((int)(((byte)(41)))));
-            this.txtInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(209)))), ((int)(((byte)(235)))));
-            this.txtInfo.Location = new System.Drawing.Point(70, 370);
-            this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(705, 26);
-            this.txtInfo.TabIndex = 15;
-            this.txtInfo.Text = "  Rank and Threat Level will be automatically calculated based on Exam Score";
-            this.txtInfo.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.lblHeroID.AutoSize = true;
+            this.lblHeroID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeroID.ForeColor = System.Drawing.Color.White;
+            this.lblHeroID.Location = new System.Drawing.Point(67, 124);
+            this.lblHeroID.Name = "lblHeroID";
+            this.lblHeroID.Size = new System.Drawing.Size(64, 17);
+            this.lblHeroID.TabIndex = 1;
+            this.lblHeroID.Text = "Hero ID";
             // 
-            // btnAddSuperhero
+            // pnlAddHeroTop
             // 
-            this.btnAddSuperhero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(184)))));
-            this.btnAddSuperhero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSuperhero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddSuperhero.ForeColor = System.Drawing.Color.White;
-            this.btnAddSuperhero.Location = new System.Drawing.Point(70, 415);
-            this.btnAddSuperhero.Name = "btnAddSuperhero";
-            this.btnAddSuperhero.Size = new System.Drawing.Size(592, 28);
-            this.btnAddSuperhero.TabIndex = 16;
-            this.btnAddSuperhero.Text = "Add Superhero";
-            this.btnAddSuperhero.UseVisualStyleBackColor = false;
+            this.pnlAddHeroTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(184)))));
+            this.pnlAddHeroTop.Controls.Add(this.pictureBox2);
+            this.pnlAddHeroTop.Controls.Add(this.pictureBox1);
+            this.pnlAddHeroTop.Controls.Add(this.lblHeadingSubscript);
+            this.pnlAddHeroTop.Controls.Add(this.lblAddNewHeadding);
+            this.pnlAddHeroTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlAddHeroTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlAddHeroTop.Name = "pnlAddHeroTop";
+            this.pnlAddHeroTop.Size = new System.Drawing.Size(945, 84);
+            this.pnlAddHeroTop.TabIndex = 0;
             // 
-            // btnClear
+            // pictureBox2
             // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(64)))), ((int)(((byte)(84)))));
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.Red;
-            this.btnClear.Location = new System.Drawing.Point(668, 415);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(106, 27);
-            this.btnClear.TabIndex = 17;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(52, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
-            // lblAddNewHeadding
+            // pictureBox1
             // 
-            this.lblAddNewHeadding.AutoSize = true;
-            this.lblAddNewHeadding.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddNewHeadding.ForeColor = System.Drawing.Color.White;
-            this.lblAddNewHeadding.Location = new System.Drawing.Point(46, 17);
-            this.lblAddNewHeadding.Name = "lblAddNewHeadding";
-            this.lblAddNewHeadding.Size = new System.Drawing.Size(228, 31);
-            this.lblAddNewHeadding.TabIndex = 0;
-            this.lblAddNewHeadding.Text = "Add New Superhero";
-            this.lblAddNewHeadding.Click += new System.EventHandler(this.label1_Click);
+            this.pictureBox1.Location = new System.Drawing.Point(-60, -3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(39, 36);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // lblHeadingSubscript
             // 
@@ -254,6 +268,18 @@
             this.lblHeadingSubscript.Size = new System.Drawing.Size(410, 22);
             this.lblHeadingSubscript.TabIndex = 1;
             this.lblHeadingSubscript.Text = "Register a new hero into the academy database";
+            // 
+            // lblAddNewHeadding
+            // 
+            this.lblAddNewHeadding.AutoSize = true;
+            this.lblAddNewHeadding.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewHeadding.ForeColor = System.Drawing.Color.White;
+            this.lblAddNewHeadding.Location = new System.Drawing.Point(88, 18);
+            this.lblAddNewHeadding.Name = "lblAddNewHeadding";
+            this.lblAddNewHeadding.Size = new System.Drawing.Size(228, 31);
+            this.lblAddNewHeadding.TabIndex = 0;
+            this.lblAddNewHeadding.Text = "Add New Superhero";
+            this.lblAddNewHeadding.Click += new System.EventHandler(this.label1_Click);
             // 
             // AddHeroUserControl
             // 
@@ -268,6 +294,8 @@
             this.pnlAddHero.PerformLayout();
             this.pnlAddHeroTop.ResumeLayout(false);
             this.pnlAddHeroTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,5 +319,7 @@
         private System.Windows.Forms.Button btnAddSuperhero;
         private System.Windows.Forms.Label lblAddNewHeadding;
         private System.Windows.Forms.Label lblHeadingSubscript;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
