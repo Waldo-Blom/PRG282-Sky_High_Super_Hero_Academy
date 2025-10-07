@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainApplciation));
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnSummary = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTop.SuspendLayout();
@@ -44,6 +46,7 @@
             // 
             // pnlNav
             // 
+            this.pnlNav.BackColor = System.Drawing.Color.Transparent;
             this.pnlNav.Controls.Add(this.btnAbout);
             this.pnlNav.Controls.Add(this.btnSummary);
             this.pnlNav.Controls.Add(this.btnViewAll);
@@ -51,15 +54,18 @@
             this.pnlNav.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlNav.Location = new System.Drawing.Point(507, 0);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(675, 59);
+            this.pnlNav.Size = new System.Drawing.Size(675, 74);
             this.pnlNav.TabIndex = 0;
             // 
             // btnAbout
             // 
-            this.btnAbout.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnAbout.Location = new System.Drawing.Point(496, 12);
+            this.btnAbout.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAbout.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAbout.ForeColor = System.Drawing.Color.White;
+            this.btnAbout.Location = new System.Drawing.Point(510, 14);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(121, 34);
+            this.btnAbout.Size = new System.Drawing.Size(135, 40);
             this.btnAbout.TabIndex = 3;
             this.btnAbout.Text = "About";
             this.btnAbout.UseVisualStyleBackColor = false;
@@ -67,10 +73,13 @@
             // 
             // btnSummary
             // 
-            this.btnSummary.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnSummary.Location = new System.Drawing.Point(357, 12);
+            this.btnSummary.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnSummary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSummary.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnSummary.ForeColor = System.Drawing.Color.White;
+            this.btnSummary.Location = new System.Drawing.Point(350, 14);
             this.btnSummary.Name = "btnSummary";
-            this.btnSummary.Size = new System.Drawing.Size(121, 34);
+            this.btnSummary.Size = new System.Drawing.Size(135, 40);
             this.btnSummary.TabIndex = 2;
             this.btnSummary.Text = "Summary";
             this.btnSummary.UseVisualStyleBackColor = false;
@@ -78,10 +87,13 @@
             // 
             // btnViewAll
             // 
-            this.btnViewAll.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnViewAll.Location = new System.Drawing.Point(213, 12);
+            this.btnViewAll.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnViewAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnViewAll.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnViewAll.ForeColor = System.Drawing.Color.White;
+            this.btnViewAll.Location = new System.Drawing.Point(190, 14);
             this.btnViewAll.Name = "btnViewAll";
-            this.btnViewAll.Size = new System.Drawing.Size(121, 34);
+            this.btnViewAll.Size = new System.Drawing.Size(135, 40);
             this.btnViewAll.TabIndex = 1;
             this.btnViewAll.Text = "View All";
             this.btnViewAll.UseVisualStyleBackColor = false;
@@ -90,11 +102,13 @@
             // bntAddHero
             // 
             this.bntAddHero.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.bntAddHero.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bntAddHero.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.bntAddHero.Location = new System.Drawing.Point(64, 12);
+            this.bntAddHero.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.bntAddHero.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bntAddHero.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntAddHero.ForeColor = System.Drawing.Color.White;
+            this.bntAddHero.Location = new System.Drawing.Point(32, 14);
             this.bntAddHero.Name = "bntAddHero";
-            this.bntAddHero.Size = new System.Drawing.Size(121, 34);
+            this.bntAddHero.Size = new System.Drawing.Size(135, 40);
             this.bntAddHero.TabIndex = 0;
             this.bntAddHero.Text = "Add hero";
             this.bntAddHero.UseVisualStyleBackColor = false;
@@ -103,40 +117,60 @@
             // lblBrandName
             // 
             this.lblBrandName.AutoSize = true;
-            this.lblBrandName.Font = new System.Drawing.Font("MV Boli", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrandName.Location = new System.Drawing.Point(105, 18);
+            this.lblBrandName.BackColor = System.Drawing.Color.Transparent;
+            this.lblBrandName.Font = new System.Drawing.Font("Rockwell Nova Cond", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrandName.ForeColor = System.Drawing.Color.White;
+            this.lblBrandName.Location = new System.Drawing.Point(195, 2);
             this.lblBrandName.Name = "lblBrandName";
-            this.lblBrandName.Size = new System.Drawing.Size(266, 28);
+            this.lblBrandName.Size = new System.Drawing.Size(292, 42);
             this.lblBrandName.TabIndex = 1;
             this.lblBrandName.Text = "Sky High Heroes Academy";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(22, 11);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(26, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 38);
+            this.pictureBox1.Size = new System.Drawing.Size(144, 73);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pnlTop
             // 
+            this.pnlTop.BackColor = System.Drawing.SystemColors.Desktop;
             this.pnlTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Controls.Add(this.pictureBox1);
             this.pnlTop.Controls.Add(this.lblBrandName);
             this.pnlTop.Controls.Add(this.pnlNav);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1184, 61);
+            this.pnlTop.Size = new System.Drawing.Size(1184, 76);
             this.pnlTop.TabIndex = 2;
             // 
             // pnlContent
             // 
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(0, 61);
+            this.pnlContent.Location = new System.Drawing.Point(0, 76);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1184, 600);
+            this.pnlContent.Size = new System.Drawing.Size(1184, 585);
             this.pnlContent.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Rockwell Nova Cond", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label1.Location = new System.Drawing.Point(207, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(245, 19);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "A super hero mangement system for all your needs";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // MainApplciation
             // 
@@ -166,5 +200,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.Label label1;
     }
 }

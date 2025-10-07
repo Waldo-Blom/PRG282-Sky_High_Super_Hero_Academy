@@ -56,5 +56,15 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
             // Load the AddHeroUserControl by default
             LoadUserControl(new AddHeroUserControl());
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
