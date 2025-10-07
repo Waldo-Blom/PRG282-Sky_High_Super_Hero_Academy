@@ -28,32 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.About = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // About
-            // 
-            this.About.AutoSize = true;
-            this.About.Location = new System.Drawing.Point(379, 197);
-            this.About.Name = "About";
-            this.About.Size = new System.Drawing.Size(77, 13);
-            this.About.TabIndex = 1;
-            this.About.Text = "Summary page";
             // 
             // SummaryUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.About);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(6)))), ((int)(((byte)(23)))));
             this.Name = "SummaryUserControl";
             this.Size = new System.Drawing.Size(1184, 600);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label About;
     }
 }

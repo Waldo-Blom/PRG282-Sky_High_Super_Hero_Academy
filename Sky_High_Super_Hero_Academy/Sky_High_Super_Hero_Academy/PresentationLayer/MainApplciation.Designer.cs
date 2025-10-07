@@ -140,7 +140,7 @@
             // 
             // pnlTop
             // 
-            this.pnlTop.BackColor = System.Drawing.SystemColors.Desktop;
+            this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(6)))), ((int)(((byte)(23)))));
             this.pnlTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Controls.Add(this.pictureBox1);
@@ -179,6 +179,7 @@
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlTop);
+            this.MaximizeBox = false;
             this.Name = "MainApplciation";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainApplciation_Load);

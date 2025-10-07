@@ -16,5 +16,15 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
         {
             InitializeComponent();
         }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
