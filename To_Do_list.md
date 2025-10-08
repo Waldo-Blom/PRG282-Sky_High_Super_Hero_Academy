@@ -1,20 +1,9 @@
 # TO DO design:
 ## Overall:
-- [ ]  Rounded corners for panels?? - Waldo
-- [ ] New icons for each page - Waldo
 - [ ] Add icon to the app - Waldo
-
-## Add Hero: - Waldo
-- [ ] 
-
-## View All: - Waldo
-- [ ] 
-
-## Summary: - Waldo
-- [ ] 
-
-## About: - Waldo
-- [ ] 
+- [ ] Add hover animation to the nav bar btn - Waldo
+- [ ] Rounded coreners for pnl's ?? - Waldo
+- [ ] Gradient's for background for bnt/pnl ?? - Waldo
 
 # Functionality To Do:
 ## Overall:
