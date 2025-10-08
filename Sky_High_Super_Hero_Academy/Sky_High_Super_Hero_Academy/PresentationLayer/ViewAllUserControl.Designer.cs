@@ -29,100 +29,46 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllUserControl));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlAddHero = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Hero_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Superpower = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Exam_Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rank = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Threat_Level = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlAddHeroTop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblHeadingSubscript = new System.Windows.Forms.Label();
             this.lblAddNewHeadding = new System.Windows.Forms.Label();
+            this.dataGridViewHeroes = new System.Windows.Forms.DataGridView();
+            this.colHeroID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSuperpower = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExamScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colThreatLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlAddHero.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlAddHeroTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHeroes)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlAddHero
             // 
             this.pnlAddHero.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlAddHero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(40)))), ((int)(((byte)(58)))));
-            this.pnlAddHero.Controls.Add(this.dataGridView1);
+            this.pnlAddHero.Controls.Add(this.dataGridViewHeroes);
             this.pnlAddHero.Controls.Add(this.pnlAddHeroTop);
             this.pnlAddHero.Location = new System.Drawing.Point(120, 65);
             this.pnlAddHero.Name = "pnlAddHero";
             this.pnlAddHero.Size = new System.Drawing.Size(945, 470);
             this.pnlAddHero.TabIndex = 2;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Hero_ID,
-            this.Name,
-            this.Age,
-            this.Superpower,
-            this.Exam_Score,
-            this.Rank,
-            this.Threat_Level,
-            this.Delete,
-            this.Edit});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 109);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(941, 150);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // Hero_ID
-            // 
-            this.Hero_ID.HeaderText = "Hero ID";
-            this.Hero_ID.Name = "Hero_ID";
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
-            // 
-            // Age
-            // 
-            this.Age.HeaderText = "Age";
-            this.Age.Name = "Age";
-            // 
-            // Superpower
-            // 
-            this.Superpower.HeaderText = "Superpower";
-            this.Superpower.Name = "Superpower";
-            // 
-            // Exam_Score
-            // 
-            this.Exam_Score.HeaderText = "Exam Score";
-            this.Exam_Score.Name = "Exam_Score";
-            // 
-            // Rank
-            // 
-            this.Rank.HeaderText = "Rank";
-            this.Rank.Name = "Rank";
-            // 
-            // Threat_Level
-            // 
-            this.Threat_Level.HeaderText = "Threat Level";
-            this.Threat_Level.Name = "Threat_Level";
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
             // 
             // pnlAddHeroTop
             // 
@@ -168,19 +114,148 @@
             this.lblAddNewHeadding.TabIndex = 0;
             this.lblAddNewHeadding.Text = "All Superheroes";
             // 
+            // dataGridViewHeroes
+            // 
+            this.dataGridViewHeroes.AllowUserToAddRows = false;
+            this.dataGridViewHeroes.AllowUserToDeleteRows = false;
+            this.dataGridViewHeroes.AllowUserToOrderColumns = true;
+            this.dataGridViewHeroes.AllowUserToResizeColumns = false;
+            this.dataGridViewHeroes.AllowUserToResizeRows = false;
+            this.dataGridViewHeroes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(6)))), ((int)(((byte)(23)))));
+            this.dataGridViewHeroes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(6)))), ((int)(((byte)(23)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewHeroes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewHeroes.ColumnHeadersHeight = 40;
+            this.dataGridViewHeroes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colHeroID,
+            this.colName,
+            this.colAge,
+            this.colSuperpower,
+            this.colExamScore,
+            this.colRank,
+            this.colThreatLevel,
+            this.colDelete,
+            this.colEdit});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(6)))), ((int)(((byte)(23)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewHeroes.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewHeroes.EnableHeadersVisualStyles = false;
+            this.dataGridViewHeroes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.dataGridViewHeroes.Location = new System.Drawing.Point(0, 90);
+            this.dataGridViewHeroes.MultiSelect = false;
+            this.dataGridViewHeroes.Name = "dataGridViewHeroes";
+            this.dataGridViewHeroes.ReadOnly = true;
+            this.dataGridViewHeroes.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(10)))), ((int)(((byte)(30)))));
+            this.dataGridViewHeroes.RowTemplate.Height = 50;
+            this.dataGridViewHeroes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewHeroes.Size = new System.Drawing.Size(939, 377);
+            this.dataGridViewHeroes.TabIndex = 1;
+            // 
+            // colHeroID
+            // 
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(200)))));
+            this.colHeroID.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colHeroID.HeaderText = "HeroID";
+            this.colHeroID.Name = "colHeroID";
+            this.colHeroID.ReadOnly = true;
+            this.colHeroID.Width = 65;
+            // 
+            // colName
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.colName.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Width = 150;
+            // 
+            // colAge
+            // 
+            this.colAge.HeaderText = "Age";
+            this.colAge.Name = "colAge";
+            this.colAge.ReadOnly = true;
+            this.colAge.Width = 70;
+            // 
+            // colSuperpower
+            // 
+            this.colSuperpower.HeaderText = "Superpower";
+            this.colSuperpower.Name = "colSuperpower";
+            this.colSuperpower.ReadOnly = true;
+            this.colSuperpower.Width = 180;
+            // 
+            // colExamScore
+            // 
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colExamScore.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colExamScore.HeaderText = "Exam Score";
+            this.colExamScore.Name = "colExamScore";
+            this.colExamScore.ReadOnly = true;
+            // 
+            // colRank
+            // 
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gold;
+            this.colRank.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colRank.HeaderText = "Rank";
+            this.colRank.Name = "colRank";
+            this.colRank.ReadOnly = true;
+            this.colRank.Width = 70;
+            // 
+            // colThreatLevel
+            // 
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.colThreatLevel.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colThreatLevel.HeaderText = "Threat Level";
+            this.colThreatLevel.Name = "colThreatLevel";
+            this.colThreatLevel.ReadOnly = true;
+            this.colThreatLevel.Width = 160;
+            // 
+            // colDelete
+            // 
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red;
+            this.colDelete.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colDelete.HeaderText = "Delete";
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Width = 60;
+            // 
+            // colEdit
+            // 
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Gray;
+            this.colEdit.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colEdit.HeaderText = "Edit";
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Width = 60;
+            // 
             // ViewAllUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(6)))), ((int)(((byte)(23)))));
             this.Controls.Add(this.pnlAddHero);
-         //   this.Name = "ViewAllUserControl";
+            this.Name = "ViewAllUserControl";
             this.Size = new System.Drawing.Size(1184, 600);
+            this.Load += new System.EventHandler(this.ViewAllUserControl_Load);
             this.pnlAddHero.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnlAddHeroTop.ResumeLayout(false);
             this.pnlAddHeroTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHeroes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,16 +266,16 @@
         private System.Windows.Forms.Panel pnlAddHeroTop;
         private System.Windows.Forms.Label lblHeadingSubscript;
         private System.Windows.Forms.Label lblAddNewHeadding;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hero_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Age;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Superpower;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Exam_Score;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rank;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Threat_Level;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Delete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Edit;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridView dataGridViewHeroes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHeroID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSuperpower;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colExamScore;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRank;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colThreatLevel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEdit;
     }
 }
