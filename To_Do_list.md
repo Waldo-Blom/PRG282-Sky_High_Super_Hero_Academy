@@ -1,4 +1,7 @@
 # To-Do Design
+##
+* [ ] Add search bar to the ViewAllSuperheroes screen
+* [ ] New UserContorl for editing of heroes
 
 ## Overall
 
@@ -9,7 +12,7 @@
 
 ---
 
-# Functionality To-Do
+# Functionality To-Do - Timeline to have finished by 18/10/2025
 
 ## **Waldo – File Handling & Data Model**
 
@@ -57,7 +60,7 @@
 
 * Load heroes from `superheroes.txt` into a **DataGridView**.
 * Implement:
-
+  * **Search bar** — Functionality for the search bar
   * **Edit** — load hero data into form fields for updates and save changes.
   * **Delete** — remove hero from file with confirmation.
 * Ensure the DataGridView refreshes correctly after add/update/delete actions.
@@ -126,12 +129,11 @@ Generated On: 10/9/2025 5:15:37 PM
 ```
 
 **Note:**
-Use `DateTime.Now` to generate the “Generated On” timestamp. Append to the existing file to maintain a log, **or** Create a new file for each report ??? -> To be decided.
+Use `DateTime.Now` to generate the “Generated On” timestamp. Append to the existing file to maintain a log.
 
 ---
 
 # Repo To-Do
 
-* [ ] Update license with the custom license (see **MLG32** repo for reference).
-* [ ] Update `README.md`.
-* [ ] Create GitHub Releases for the app (ask **Jaden** how this is done).
+* [ ] Update `README.md`. - Waldo
+* [ ] Create GitHub Releases for the app (ask **Jaden** how this is done) - Waldo
