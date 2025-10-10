@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\Superhero.cs" />
+    <Compile Include="DataAccessLayer\Superhero_FileHandler.cs" />
+    <Compile Include="PresentationLayer\Superhero_FormatHandler.cs" />
     <Compile Include="PresentationLayer\MainApplciation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,9 +118,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BusinessLayer\" />
-    <Folder Include="DataAccessLayer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
