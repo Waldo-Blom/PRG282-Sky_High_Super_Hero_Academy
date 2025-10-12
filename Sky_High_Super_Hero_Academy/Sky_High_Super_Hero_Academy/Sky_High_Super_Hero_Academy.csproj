@@ -73,6 +73,12 @@
     <Compile Include="PresentationLayer\AboutUserControl.Designer.cs">
       <DependentUpon>AboutUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\EditHeroUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\EditHeroUserControl.Designer.cs">
+      <DependentUpon>EditHeroUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\ViewAllUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\AddHeroUserControl.resx">
       <DependentUpon>AddHeroUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\EditHeroUserControl.resx">
+      <DependentUpon>EditHeroUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\MainApplciation.resx">
       <DependentUpon>MainApplciation.cs</DependentUpon>
