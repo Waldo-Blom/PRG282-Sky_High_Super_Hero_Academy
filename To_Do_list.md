@@ -1,7 +1,7 @@
 # To-Do Design
 ##
 * [ ] Add search bar to the ViewAllSuperheroes screen
-* [ ] New UserContorl for editing of heroes
+* [ ] New UserContorl for editing of heroes -> fix the cancel edit causes that you are not able to go back to the rest of the options in the forms
 
 ## Overall
 
