@@ -71,6 +71,24 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
             return ok;
         }
 
+        private (string rank, string threat) ComputeRankAndThreat(int score)
+        {
+            string rank;
+            if (score >= 95) rank = "S";
+            else if (score >= 85) rank = "A";
+            else if (score >= 70) rank = "B";
+            else if (score >= 50) rank = "C";
+            else rank = "D";
+
+            string threat;
+            if (score >= 95) threat = "Extreme";
+            else if (score >= 85) threat = "High";
+            else if (score >= 70) threat = "Moderate";
+            else if (score >= 50) threat = "Low";
+            else threat = "Minimal";
+
+            return (rank, threat);
+        }
 
 
         private void textBox6_TextChanged(object sender, EventArgs e)
