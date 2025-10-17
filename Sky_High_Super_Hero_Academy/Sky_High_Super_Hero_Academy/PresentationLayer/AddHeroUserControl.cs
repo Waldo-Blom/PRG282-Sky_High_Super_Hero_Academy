@@ -109,6 +109,38 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
 
         private void btnAddSuperhero_Click(object sender, EventArgs e)
         {
+            _errorProvider.Clear();
+
+            if (!TryCollectInputs(out var id, out var name, out var age, out var superpower, out var examScore))
+                return;
+
+            var (rank, threat) = ComputeRankAndThreat(examScore);
+
+            try
+            {
+                var filePath = GetDataFilePath();
+                Directory.CreateDirectory(Path.GetDirectoryName(filePath) ?? AppDomain.CurrentDomain.BaseDirectory);
+
+                if (RecordExists(filePath, id))
+                {
+                    var resp = MessageBox.Show($"A hero with ID '{id}' already exists. Overwrite?", "Confirm overwrite", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (resp != DialogResult.Yes)
+                        return;
+
+                    ReplaceRecord(filePath, id, FormatRecord(id, name, age, superpower, examScore, rank, threat));
+                }
+                else
+                {
+                    AppendRecord(filePath, FormatRecord(id, name, age, superpower, examScore, rank, threat));
+                }
+
+                MessageBox.Show("Hero saved successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnClear_Click(this, EventArgs.Empty); // clear inputs
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to save hero: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
