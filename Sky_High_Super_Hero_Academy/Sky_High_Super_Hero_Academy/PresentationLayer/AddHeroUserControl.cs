@@ -113,12 +113,31 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-
+            txtHeroID.Clear();
+            txtHeroName.Clear();
+            txtAge.Clear();
+            txtSuperpower.Clear();
+            txtExamScore.Clear();
+            txtInfo.Text = "  Rank and Threat Level will be automatically calculated based on Exam Score";
+            _errorProvider.Clear();
         }
 
         private void txtExamScore_TextChanged(object sender, EventArgs e)
         {
+            UpdateRankThreatPreview();
+        }
 
+        private void UpdateRankThreatPreview()
+        {
+            if (int.TryParse((txtExamScore.Text ?? string.Empty).Trim(), out var score) && score >= 0 && score <= 100)
+            {
+                var (rank, threat) = ComputeRankAndThreat(score);
+                txtInfo.Text = $"  Rank: {rank} — Threat Level: {threat}";
+            }
+            else
+            {
+                txtInfo.Text = "Rank and Threat Level will be automatically calculated based on Exam Score";
+            }
         }
     }
 }
