@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -138,6 +139,115 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
             {
                 txtInfo.Text = "Rank and Threat Level will be automatically calculated based on Exam Score";
             }
+        }
+
+        private string GetDataFilePath()
+        {
+            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "superheroes.txt");
+        }
+
+        private static string Quote(string s)
+        {
+            if (s == null) return "\"\"";
+            return "\"" + s.Replace("\"", "\"\"") + "\"";
+        }
+
+        private string FormatRecord(string id, string name, int age, string superpower, int examScore, string rank, string threat)
+        {
+            // CSV: Id,Name,Age,Superpower,ExamScore,Rank,ThreatLevel
+            return string.Join(",", new[]
+            {
+        Quote(id),
+        Quote(name),
+        age.ToString(),
+        Quote(superpower),
+        examScore.ToString(),
+        Quote(rank),
+        Quote(threat)
+    });
+        }
+
+        private void AppendRecord(string filePath, string line)
+        {
+            using (var sw = new StreamWriter(filePath, true, Encoding.UTF8))
+                sw.WriteLine(line);
+        }
+
+        private bool RecordExists(string filePath, string id)
+        {
+            if (!File.Exists(filePath))
+                return false;
+
+            foreach (var raw in File.ReadAllLines(filePath, Encoding.UTF8))
+            {
+                if (string.IsNullOrWhiteSpace(raw)) continue;
+                var first = ParseCsvFirstField(raw);
+                if (string.Equals(first, id, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
+        }
+
+        private void ReplaceRecord(string filePath, string id, string newLine)
+        {
+            var lines = File.Exists(filePath) ? File.ReadAllLines(filePath, Encoding.UTF8) : new string[0];
+            for (int i = 0; i < lines.Length; i++)
+            {
+                if (string.Equals(ParseCsvFirstField(lines[i]), id, StringComparison.OrdinalIgnoreCase))
+                {
+                    lines[i] = newLine;
+                    File.WriteAllLines(filePath, lines, Encoding.UTF8);
+                    return;
+                }
+            }
+            // not found -> append
+            AppendRecord(filePath, newLine);
+        }
+
+        // Extract first CSV field (handles quoted field with escaped quotes)
+        private string ParseCsvFirstField(string line)
+        {
+            if (string.IsNullOrEmpty(line)) return string.Empty;
+            var i = 0;
+            var inQuotes = false;
+            var sb = new StringBuilder();
+            while (i < line.Length)
+            {
+                var c = line[i];
+                if (!inQuotes)
+                {
+                    if (c == '"')
+                    {
+                        inQuotes = true;
+                    }
+                    else if (c == ',')
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        sb.Append(c);
+                    }
+                }
+                else
+                {
+                    if (c == '"' && i + 1 < line.Length && line[i + 1] == '"')
+                    {
+                        sb.Append('"');
+                        i++; // skip escaped quote
+                    }
+                    else if (c == '"')
+                    {
+                        inQuotes = false;
+                    }
+                    else
+                    {
+                        sb.Append(c);
+                    }
+                }
+                i++;
+            }
+            return sb.ToString();
         }
     }
 }
