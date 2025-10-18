@@ -51,7 +51,6 @@
     </Compile>
     <Compile Include="BusinessLayer\Superhero.cs" />
     <Compile Include="DataAccessLayer\Superhero_FileHandler.cs" />
-    <Compile Include="PresentationLayer\Superhero_FormatHandler.cs" />
     <Compile Include="BusinessLayer\SummaryLogic.cs" />
     <Compile Include="DataAccessLayer\Summary_FileHandler.cs" />
     <Compile Include="PresentationLayer\MainApplciation.cs">
@@ -78,12 +77,6 @@
     <Compile Include="PresentationLayer\AboutUserControl.Designer.cs">
       <DependentUpon>AboutUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\EditHeroUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PresentationLayer\EditHeroUserControl.Designer.cs">
-      <DependentUpon>EditHeroUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="PresentationLayer\ViewAllUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,9 +90,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\AddHeroUserControl.resx">
       <DependentUpon>AddHeroUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\EditHeroUserControl.resx">
-      <DependentUpon>EditHeroUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\MainApplciation.resx">
       <DependentUpon>MainApplciation.cs</DependentUpon>

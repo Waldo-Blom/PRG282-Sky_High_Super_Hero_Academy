@@ -136,7 +136,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(144, 73);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pnlTop
             // 
@@ -170,7 +169,6 @@
             this.label1.Size = new System.Drawing.Size(245, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "A super hero mangement system for all your needs";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // MainApplciation
             // 

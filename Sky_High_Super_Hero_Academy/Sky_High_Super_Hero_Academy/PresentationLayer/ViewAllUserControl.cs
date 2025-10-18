@@ -4,105 +4,48 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Sky_High_Super_Hero_Academy.BusinessLayer;
 
 namespace Sky_High_Super_Hero_Academy.PresentationLayer
 {
     public partial class ViewAllUserControl : UserControl
     {
-        private readonly List<Hero> _heroes = new List<Hero>();
-        private readonly string _dataFilePath;
+        private readonly List<Superhero> heroes = new List<Superhero>();
+        private readonly Superhero_FileHandler fileHandler = new Superhero_FileHandler();
 
         public ViewAllUserControl()
         {
             InitializeComponent();
-
-            // file lives alongside exe; change path if you prefer a different location
-            _dataFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "superheroes.txt");
-
-            EnsureDataFileExists();
-            LoadFromFile();
         }
-            
+
         private void ViewAllUserControl_Load(object sender, EventArgs e)
         {
+            LoadFromFile();
         }
 
-        //ensure file exists
-        private void EnsureDataFileExists()
-        {
-            if (!File.Exists(_dataFilePath))
-            {
-                File.WriteAllLines(_dataFilePath, new[] {
-                    //sample rows
-                    "H001|Tempest Strike|28|Lightning Manipulation|95|S|Finals Week",
-                    "H002|Iron Phoenix|32|Metal Control|88|A|Midterm Madness",
-                    "H003|Shadow Whisper|24|Shadow Teleportation|76|B|Group Project Gone Wrong",
-                    "H004|Crimson Blade|29|Enhanced Strength|82|C|Pop Quiz"
-                });
-            }
-        }
-
-       
-        private void LoadFromFile() //load heroes from file into memory and populate grid
-        {
-            _heroes.Clear();
-
-            try
-            {
-                var lines = File.ReadAllLines(_dataFilePath);
-                foreach (var line in lines)
-                {
-                    if (string.IsNullOrWhiteSpace(line))
-                        continue;
- 
-                    var parts = line.Split(new[] { '|' }, StringSplitOptions.None); //expected format: HeroID|Name|Age|Superpower|ExamScore|Rank|ThreatLevel
-                    if (parts.Length < 7)
-                        continue;
-
-                    var hero = new Hero
-                    {
-                        HeroId = parts[0].Trim(),
-                        Name = parts[1].Trim(),
-                        Age = parts[2].Trim(),
-                        Superpower = parts[3].Trim(),
-                        ExamScore = parts[4].Trim(),
-                        Rank = parts[5].Trim(),
-                        ThreatLevel = parts[6].Trim()
-                    };
-
-                    _heroes.Add(hero);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Failed to load heroes from file: {ex.Message}", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            PopulateGrid(_heroes);
-        }
-
-        private void SaveAllToFile()//save current in memory list to file
+        private void LoadFromFile()
         {
             try
             {
-                var lines = _heroes.Select(h => $"{h.HeroId}|{h.Name}|{h.Age}|{h.Superpower}|{h.ExamScore}|{h.Rank}|{h.ThreatLevel}");
-                File.WriteAllLines(_dataFilePath, lines);
+                var all = fileHandler.ReadAllSuperheroes() ?? new List<Superhero>();
+                heroes.Clear();
+                heroes.AddRange(all);
+                PopulateGrid(heroes);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to save heroes to file: {ex.Message}", "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Failed to load superheroes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        
-        private void PopulateGrid(IEnumerable<Hero> heroesToShow) //fill DataGridView rows from list
+        private void PopulateGrid(IEnumerable<Superhero> heroesToShow) //fill DataGridView rows from list
         {
             dataGridViewHeroes.Rows.Clear();
 
             foreach (var h in heroesToShow)
             {
                 dataGridViewHeroes.Rows.Add(
-                    h.HeroId,
+                    h.HeroID,
                     h.Name,
                     h.Age,
                     h.Superpower,
@@ -120,16 +63,16 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
             var q = (txtSearch.Text ?? string.Empty).Trim();
             if (string.IsNullOrEmpty(q))
             {
-                PopulateGrid(_heroes);
+                PopulateGrid(heroes);
                 return;
             }
 
-            var filtered = _heroes.Where(h =>
-                h.HeroId.IndexOf(q, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                h.Name.IndexOf(q, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                h.Superpower.IndexOf(q, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                h.Rank.IndexOf(q, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                h.ThreatLevel.IndexOf(q, StringComparison.OrdinalIgnoreCase) >= 0
+            var filtered = heroes.Where(h =>
+                (h.HeroID ?? string.Empty).IndexOf(q, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                (h.Name ?? string.Empty).IndexOf(q, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                (h.Superpower ?? string.Empty).IndexOf(q, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                (h.Rank ?? string.Empty).IndexOf(q, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                (h.ThreatLevel ?? string.Empty).IndexOf(q, StringComparison.OrdinalIgnoreCase) >= 0
             );
 
             PopulateGrid(filtered);
@@ -162,117 +105,65 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
                 if (confirm != DialogResult.Yes)
                     return;
 
-                var existing = _heroes.FirstOrDefault(h => string.Equals(h.HeroId, heroId, StringComparison.OrdinalIgnoreCase));
-                if (existing != null)
+                try
                 {
-                    _heroes.Remove(existing);
-                    SaveAllToFile();
-                    PopulateGrid(_heroes);
+                    fileHandler.DeleteSuperhero(heroId);
+                    LoadFromFile();
                 }
-                else
+                catch (Exception ex)
                 {
-                    // fallback: remove row visually
-                    grid.Rows.RemoveAt(e.RowIndex);
+                    MessageBox.Show("Failed to delete hero: " + ex.Message, "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (editCol != null && e.ColumnIndex == editCol.Index)
             {
                 //Edit clicked
                 var heroId = Convert.ToString(grid.Rows[e.RowIndex].Cells["colHeroID"].Value ?? "");
-                var existing = _heroes.FirstOrDefault(h => string.Equals(h.HeroId, heroId, StringComparison.OrdinalIgnoreCase));
+                var existing = heroes.FirstOrDefault(h => string.Equals(h.HeroID, heroId, StringComparison.OrdinalIgnoreCase));
                 if (existing == null)
                 {
                     MessageBox.Show("Selected hero not found in memory.", "Edit Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                using (var editForm = new EditHeroForm(existing.HeroId, existing.Name, existing.Age, existing.Superpower, existing.ExamScore, existing.Rank, existing.ThreatLevel))
+                using (var editForm = new EditHeroForm(existing.HeroID, existing.Name, existing.Age.ToString(), existing.Superpower, existing.ExamScore.ToString(), existing.Rank, existing.ThreatLevel))
                 {
                     if (editForm.ShowDialog(FindForm()) == DialogResult.OK)
                     {
-                        // update in-memory
-                        existing.Name = editForm.HeroName;
-                        existing.Age = editForm.HeroAge;
-                        existing.Superpower = editForm.HeroSuperpower;
-                        existing.ExamScore = editForm.HeroExamScore;
-                        existing.Rank = editForm.HeroRank;
-                        existing.ThreatLevel = editForm.HeroThreatLevel;
+                        // parse and validate
+                        if (!int.TryParse(editForm.HeroAge, out var newAge))
+                        {
+                            MessageBox.Show("Age must be a valid integer.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                        if (!double.TryParse(editForm.HeroExamScore, out var newExam))
+                        {
+                            MessageBox.Show("Exam Score must be a valid number.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
 
-                        SaveAllToFile();
-                        PopulateGrid(_heroes);
+                        try
+                        {
+                            // Create a new instance so rank/threat are recalculated from exam score
+                            var updated = new Superhero(existing.HeroID, editForm.HeroName, newAge, editForm.HeroSuperpower, newExam);
+                            fileHandler.UpdateSuperhero(existing.HeroID, updated);
+                            LoadFromFile();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Failed to update hero: " + ex.Message, "Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
         }
 
-        //hero model
-        private class Hero
-        {
-            public string HeroId { get; set; }
-            public string Name { get; set; }
-            public string Age { get; set; }
-            public string Superpower { get; set; }
-            public string ExamScore { get; set; }
-            public string Rank { get; set; }
-            public string ThreatLevel { get; set; }
-        }
-
-        private void txtSearch_MouseEnter(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void txtSearch_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewHeroes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Ignore header clicks or invalid rows
-            if (e.RowIndex < 0 || e.ColumnIndex < 0)
-                return;
-
-            // Identify what column was clicked
-            var clickedColumn = dataGridViewHeroes.Columns[e.ColumnIndex];
-
-            // Check if the Edit column was clicked
-            if (clickedColumn.Name == "colEdit")
-            {
-                // Get the hero's data from the row
-                string heroId = dataGridViewHeroes.Rows[e.RowIndex].Cells["colHeroID"].Value.ToString();
-                string heroName = dataGridViewHeroes.Rows[e.RowIndex].Cells["colName"].Value.ToString();
-                string heroAge = dataGridViewHeroes.Rows[e.RowIndex].Cells["colAge"].Value.ToString();
-                string heroSuperpower = dataGridViewHeroes.Rows[e.RowIndex].Cells["colSuperpower"].Value.ToString();
-                string heroExamScore = dataGridViewHeroes.Rows[e.RowIndex].Cells["colExamScore"].Value.ToString();
-
-                // Create EditHero user control 
-                var editControl = new EditHeroUserControl();
-
-                // Load the hero data into the edit control textboxes
-                editControl.LoadHero(heroId, heroName,heroAge, heroSuperpower, heroExamScore);
-
-                // Add the panel dynamically
-                editControl.Dock = DockStyle.Fill;
-                this.Controls.Add(editControl);
-                editControl.BringToFront();
-            }
-
-            // Check the Delete column was clicked
-            if (clickedColumn.Name == "colDelete") 
-            {
-                //functionality to be implemeted here
-            }
-        }
+ 
 
         private void txtSearch_Enter(object sender, EventArgs e)
         {
             txtSearch.Text = "";
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-          
-        }
     }
 }

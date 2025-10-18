@@ -11,8 +11,6 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
         private readonly TextBox txtAge;
         private readonly TextBox txtSuperpower;
         private readonly TextBox txtExamScore;
-        private readonly TextBox txtRank;
-        private readonly TextBox txtThreat;
         private readonly Button btnOk;
         private readonly Button btnCancel;
 
@@ -21,8 +19,6 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
         public string HeroAge => txtAge.Text.Trim();
         public string HeroSuperpower => txtSuperpower.Text.Trim();
         public string HeroExamScore => txtExamScore.Text.Trim();
-        public string HeroRank => txtRank.Text.Trim();
-        public string HeroThreatLevel => txtThreat.Text.Trim();
 
         public EditHeroForm(string heroId, string name, string age, string superpower, string examScore, string rank, string threatLevel)
         {
@@ -51,12 +47,6 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
             var lblExam = new Label { Text = "Exam Score:", Left = 12, Top = 142, Width = 80 };
             txtExamScore = new TextBox { Left = 100, Top = 138, Width = 280, Text = examScore };
 
-            var lblRank = new Label { Text = "Rank:", Left = 12, Top = 174, Width = 80 };
-            txtRank = new TextBox { Left = 100, Top = 170, Width = 280, Text = rank };
-
-            var lblThreat = new Label { Text = "Threat Level:", Left = 12, Top = 206, Width = 80 };
-            txtThreat = new TextBox { Left = 100, Top = 202, Width = 280, Text = threatLevel };
-
             btnOk = new Button { Text = "OK", Left = 200, Width = 90, Top = 250, DialogResult = DialogResult.OK };
             btnCancel = new Button { Text = "Cancel", Left = 300, Width = 90, Top = 250, DialogResult = DialogResult.Cancel };
 
@@ -72,10 +62,6 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
             Controls.Add(txtSuperpower);
             Controls.Add(lblExam);
             Controls.Add(txtExamScore);
-            Controls.Add(lblRank);
-            Controls.Add(txtRank);
-            Controls.Add(lblThreat);
-            Controls.Add(txtThreat);
             Controls.Add(btnOk);
             Controls.Add(btnCancel);
 

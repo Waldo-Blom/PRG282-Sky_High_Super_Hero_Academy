@@ -117,7 +117,6 @@
             this.txtInfo.Size = new System.Drawing.Size(756, 26);
             this.txtInfo.TabIndex = 15;
             this.txtInfo.Text = "  Rank and Threat Level will be automatically calculated based on Exam Score";
-            this.txtInfo.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // txtSuperpower
             // 
@@ -129,7 +128,6 @@
             this.txtSuperpower.Name = "txtSuperpower";
             this.txtSuperpower.Size = new System.Drawing.Size(300, 26);
             this.txtSuperpower.TabIndex = 14;
-            this.txtSuperpower.TextChanged += new System.EventHandler(this.txtSuperpower_TextChanged);
             // 
             // lblSuperpower
             // 
@@ -283,7 +281,6 @@
             this.lblAddNewHeadding.Size = new System.Drawing.Size(228, 31);
             this.lblAddNewHeadding.TabIndex = 0;
             this.lblAddNewHeadding.Text = "Add New Superhero";
-            this.lblAddNewHeadding.Click += new System.EventHandler(this.label1_Click);
             // 
             // AddHeroUserControl
             // 

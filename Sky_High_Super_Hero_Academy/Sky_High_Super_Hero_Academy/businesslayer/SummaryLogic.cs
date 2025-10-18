@@ -4,44 +4,67 @@ using System.Linq;
 
 namespace Sky_High_Super_Hero_Academy.BusinessLayer
 {
-    public class Hero
+    internal class SummaryData
     {
-        public string ID { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
-        public double ExamScore { get; set; }
-        public string Rank { get; set; }
-        public string ThreatLevel { get; set; }
+        public int TotalHeroes { get; set; }
+        public double AverageAge { get; set; }
+        public double AverageExamScore { get; set; }
+        public int SRankCount { get; set; }
+        public int ARankCount { get; set; }
+        public int BRankCount { get; set; }
+        public int CRankCount { get; set; }
     }
 
-    public class SummaryLogic
+    internal class SummaryLogic
     {
-        public string GenerateReport(List<Hero> heroes)
+        internal SummaryData CalculateSummary(List<Superhero> heroes)
         {
-            int total = heroes.Count;
-            double avgAge = heroes.Any() ? heroes.Average(h => h.Age) : 0;
-            double avgScore = heroes.Any() ? heroes.Average(h => h.ExamScore) : 0;
+            var data = new SummaryData();
 
-            int sRank = heroes.Count(h => h.Rank == "S");
-            int aRank = heroes.Count(h => h.Rank == "A");
-            int bRank = heroes.Count(h => h.Rank == "B");
-            int cRank = heroes.Count(h => h.Rank == "C");
+            if (heroes == null || heroes.Count == 0)
+            {
+                data.TotalHeroes = 0;
+                data.AverageAge = 0;
+                data.AverageExamScore = 0;
+                data.SRankCount = 0;
+                data.ARankCount = 0;
+                data.BRankCount = 0;
+                data.CRankCount = 0;
+                return data;
+            }
+
+            data.TotalHeroes = heroes.Count;
+            data.AverageAge = heroes.Average(h => h.Age);
+            data.AverageExamScore = heroes.Average(h => h.ExamScore);
+
+            // Rank values are set by Superhero.CalculateRank as "S-Rank", "A-Rank"
+            data.SRankCount = heroes.Count(h => h.Rank == "S-Rank");
+            data.ARankCount = heroes.Count(h => h.Rank == "A-Rank");
+            data.BRankCount = heroes.Count(h => h.Rank == "B-Rank");
+            data.CRankCount = heroes.Count(h => h.Rank == "C-Rank");
+
+            return data;
+        }
+
+        internal string GenerateReport(List<Superhero> heroes)
+        {
+            var data = CalculateSummary(heroes ?? new List<Superhero>());
 
             return
-$@"=== HERO SUMMARY REPORT ===
-Total Number of Heroes: {total}
-Average Age: {avgAge:F1}
-Average Exam Score: {avgScore:F1}
+                $@"=== HERO SUMMARY REPORT ===
+                Total Number of Heroes: {data.TotalHeroes}
+                Average Age: {data.AverageAge:F1}
+                Average Exam Score: {data.AverageExamScore:F1}
 
-Number of Heroes per Rank:
-S-Rank: {sRank}
-A-Rank: {aRank}
-B-Rank: {bRank}
-C-Rank: {cRank}
+                Number of Heroes per Rank:
+                S-Rank: {data.SRankCount}
+                A-Rank: {data.ARankCount}
+                B-Rank: {data.BRankCount}
+                C-Rank: {data.CRankCount}
 
-Generated On: {DateTime.Now}
-================================
-";
+                Generated On: {DateTime.Now}
+                ================================
+                ";
         }
     }
 }

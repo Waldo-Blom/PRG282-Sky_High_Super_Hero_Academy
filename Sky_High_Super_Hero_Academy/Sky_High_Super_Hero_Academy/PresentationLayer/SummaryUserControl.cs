@@ -1,10 +1,17 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using Sky_High_Super_Hero_Academy.BusinessLayer;
+using Sky_High_Super_Hero_Academy.DataAccessLayer;
 
 namespace Sky_High_Super_Hero_Academy.PresentationLayer
 {
     public partial class SummaryUserControl : UserControl
     {
+        private readonly Superhero_FileHandler heroFileHandler = new Superhero_FileHandler();
+        private readonly SummaryLogic summaryLogic = new SummaryLogic();
+        private readonly Summary_FileHandler summaryFileHandler = new Summary_FileHandler();
+
         public SummaryUserControl()
         {
             InitializeComponent();
@@ -13,24 +20,30 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
         // Event handler for Generate Summary button
         private void btnGenerateSummary_Click(object sender, EventArgs e)
         {
+            try
+            {
+                List<Superhero> heroes = heroFileHandler.ReadAllSuperheroes();
+                SummaryData data = summaryLogic.CalculateSummary(heroes);
 
-            // Update total heroes
-            lblTotalNum.Text = "10";
+                // Update labels
+                lblTotalNum.Text = data.TotalHeroes.ToString();
+                lblAVGAgeNum.Text = data.AverageAge.ToString();
+                lblAVGExamNum.Text = data.AverageExamScore.ToString();
+                lblSRankNum.Text = data.SRankCount.ToString();
+                lblARankNum.Text = data.ARankCount.ToString();
+                lblBRankNum.Text = data.BRankCount.ToString();
+                lblCRankNum.Text = data.CRankCount.ToString();
 
-            // Update average age
-            lblAVGAgeNum.Text = "27.5";
+                // Save report
+                string report = summaryLogic.GenerateReport(heroes);
+                summaryFileHandler.SaveSummary(report);
 
-            // Update average exam score
-            lblAVGExamNum.Text = "88.2";
-
-            // Update rank counts
-            lblSRankNum.Text = "2";
-            lblARankNum.Text = "3";
-            lblBRankNum.Text = "3";
-            lblCRankNum.Text = "2";
-
-            // show a message confirming the summary has been generated
-            MessageBox.Show("Summary has been generated successfully!", "Summary", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Summary has been generated successfully!", "Summary", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to generate summary: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

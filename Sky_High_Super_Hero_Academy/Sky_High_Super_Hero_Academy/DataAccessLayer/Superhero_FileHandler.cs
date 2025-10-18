@@ -2,29 +2,77 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
-using Sky_High_Super_Hero_Academy.PresentationLayer;
 
 namespace Sky_High_Super_Hero_Academy.BusinessLayer
 {
     internal class Superhero_FileHandler
     {
         private const string fileName = "superheroes.txt";
-        private Superhero_FormatHandler formatHandler = new Superhero_FormatHandler();
+
+        private string GetDataFilePath()
+        {
+            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+        }
+
+        // Formats a Superhero object into a pipe-delimited string for storage
+        private string FormatSuperheroForFile(Superhero hero)
+        {
+            try
+            {
+                // Format: HeroID|Name|Age|Superpower|ExamScore|Rank|ThreatLevel
+                return hero.HeroID + "|" + hero.Name + "|" + hero.Age + "|" + hero.Superpower + "|" + hero.ExamScore + "|" + hero.Rank + "|" + hero.ThreatLevel;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error formatting superhero: {ex.Message}");
+            }
+        }
+
+        // Parses a line from the file and creates a Superhero object
+        private Superhero LoadSuperheroFromFile(string line)
+        {
+            try
+            {
+                // Split the line by the pipe "|" delimiter
+                string[] parts = line.Split('|');
+
+                // Validate that there are the correct number of fields in the file
+                if (parts.Length < 7)
+                {
+                    throw new Exception("Invalid data format in file.");
+                }
+
+                // Extract fields
+                string heroID = parts[0].Trim();
+                string name = parts[1].Trim();
+                int age = int.Parse(parts[2].Trim());
+                string superpower = parts[3].Trim();
+                double examScore = double.Parse(parts[4].Trim());
+                // Rank and ThreatLevel will be recalculated by the Superhero constructor
+
+                return new Superhero(heroID, name, age, superpower, examScore);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error loading: {ex.Message}");
+            }
+        }
 
         // Method to add a new superhero to the file
         public void AddSuperhero(Superhero hero)
         {
             try
             {
-                string heroData = formatHandler.FormatSuperheroForFile(hero);
+                string path = GetDataFilePath();
+                Directory.CreateDirectory(Path.GetDirectoryName(path) ?? AppDomain.CurrentDomain.BaseDirectory);
 
-                using (StreamWriter sw = new StreamWriter(fileName, true)) // true = append to txt file
+                string heroData = FormatSuperheroForFile(hero);
+
+                using (StreamWriter sw = new StreamWriter(path, true)) // true = append to txt file
                 {
                     sw.WriteLine(heroData);
                 }
-
-                Console.WriteLine("Added superhero successfully.");
             }
             catch (Exception ex)
             {
@@ -39,14 +87,20 @@ namespace Sky_High_Super_Hero_Academy.BusinessLayer
 
             try
             {
-                using (StreamReader sr = new StreamReader(fileName))
+                string path = GetDataFilePath();
+                if (!File.Exists(path))
+                {
+                    return heroes; // No data yet
+                }
+
+                using (StreamReader sr = new StreamReader(path))
                 {
                     string line;
                     while ((line = sr.ReadLine()) != null)
                     {
                         if (!string.IsNullOrWhiteSpace(line))
                         {
-                            Superhero hero = formatHandler.LoadSuperheroFromFile(line);
+                            Superhero hero = LoadSuperheroFromFile(line);
                             if (hero != null)
                             {
                                 heroes.Add(hero);
@@ -73,7 +127,7 @@ namespace Sky_High_Super_Hero_Academy.BusinessLayer
                 bool found = false;
                 for (int i = 0; i < heroes.Count; i++)
                 {
-                    if (heroes[i].HeroID == heroID)
+                    if (string.Equals(heroes[i].HeroID, heroID, StringComparison.OrdinalIgnoreCase))
                     {
                         heroes[i] = updatedHero;
                         found = true;
@@ -87,8 +141,6 @@ namespace Sky_High_Super_Hero_Academy.BusinessLayer
                 }
 
                 WriteAllSuperheroes(heroes);
-
-                Console.WriteLine("Updated superhero successfully.");
             }
             catch (Exception ex)
             {
@@ -103,7 +155,7 @@ namespace Sky_High_Super_Hero_Academy.BusinessLayer
             {
                 List<Superhero> heroes = ReadAllSuperheroes();
 
-                Superhero heroToRemove = heroes.FirstOrDefault(h => h.HeroID == heroID);
+                Superhero heroToRemove = heroes.FirstOrDefault(h => string.Equals(h.HeroID, heroID, StringComparison.OrdinalIgnoreCase));
 
                 if (heroToRemove == null)
                 {
@@ -113,8 +165,6 @@ namespace Sky_High_Super_Hero_Academy.BusinessLayer
                 heroes.Remove(heroToRemove);
 
                 WriteAllSuperheroes(heroes);
-
-                Console.WriteLine("Deleted superhero successfully.");
             }
             catch (Exception ex)
             {
@@ -127,11 +177,14 @@ namespace Sky_High_Super_Hero_Academy.BusinessLayer
         {
             try
             {
-                using (StreamWriter sw = new StreamWriter(fileName, false)) // false = overwrite the .txt file
+                string path = GetDataFilePath();
+                Directory.CreateDirectory(Path.GetDirectoryName(path) ?? AppDomain.CurrentDomain.BaseDirectory);
+
+                using (StreamWriter sw = new StreamWriter(path, false)) // false = overwrite the .txt file
                 {
                     foreach (Superhero hero in heroes)
                     {
-                        string heroData = formatHandler.FormatSuperheroForFile(hero);
+                        string heroData = FormatSuperheroForFile(hero);
                         sw.WriteLine(heroData);
                     }
                 }
