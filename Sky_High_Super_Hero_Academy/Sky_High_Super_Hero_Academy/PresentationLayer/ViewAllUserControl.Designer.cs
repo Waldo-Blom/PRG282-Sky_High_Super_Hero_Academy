@@ -39,6 +39,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllUserControl));
             this.pnlAddHero = new System.Windows.Forms.Panel();
+            this.pnlAddHeroTop = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblHeadingSubscript = new System.Windows.Forms.Label();
+            this.lblAddNewHeadding = new System.Windows.Forms.Label();
             this.dataGridViewHeroes = new System.Windows.Forms.DataGridView();
             this.colHeroID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,14 +54,8 @@
             this.colExamScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colThreatLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlAddHeroTop = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblHeadingSubscript = new System.Windows.Forms.Label();
-            this.lblAddNewHeadding = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlAddHero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHeroes)).BeginInit();
             this.pnlAddHeroTop.SuspendLayout();
@@ -73,6 +74,83 @@
             this.pnlAddHero.Name = "pnlAddHero";
             this.pnlAddHero.Size = new System.Drawing.Size(945, 470);
             this.pnlAddHero.TabIndex = 2;
+            // 
+            // pnlAddHeroTop
+            // 
+            this.pnlAddHeroTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(184)))));
+            this.pnlAddHeroTop.Controls.Add(this.btnRefresh);
+            this.pnlAddHeroTop.Controls.Add(this.btnSearch);
+            this.pnlAddHeroTop.Controls.Add(this.txtSearch);
+            this.pnlAddHeroTop.Controls.Add(this.pictureBox2);
+            this.pnlAddHeroTop.Controls.Add(this.lblHeadingSubscript);
+            this.pnlAddHeroTop.Controls.Add(this.lblAddNewHeadding);
+            this.pnlAddHeroTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlAddHeroTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlAddHeroTop.Name = "pnlAddHeroTop";
+            this.pnlAddHeroTop.Size = new System.Drawing.Size(945, 84);
+            this.pnlAddHeroTop.TabIndex = 0;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Location = new System.Drawing.Point(820, 21);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(100, 28);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Location = new System.Drawing.Point(718, 21);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(90, 28);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Location = new System.Drawing.Point(468, 23);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(244, 20);
+            this.txtSearch.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(55, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblHeadingSubscript
+            // 
+            this.lblHeadingSubscript.AutoSize = true;
+            this.lblHeadingSubscript.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeadingSubscript.ForeColor = System.Drawing.Color.LightGray;
+            this.lblHeadingSubscript.Location = new System.Drawing.Point(48, 48);
+            this.lblHeadingSubscript.Name = "lblHeadingSubscript";
+            this.lblHeadingSubscript.Size = new System.Drawing.Size(343, 22);
+            this.lblHeadingSubscript.TabIndex = 1;
+            this.lblHeadingSubscript.Text = "Complete list of all the academy heroes";
+            // 
+            // lblAddNewHeadding
+            // 
+            this.lblAddNewHeadding.AutoSize = true;
+            this.lblAddNewHeadding.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddNewHeadding.ForeColor = System.Drawing.Color.White;
+            this.lblAddNewHeadding.Location = new System.Drawing.Point(91, 17);
+            this.lblAddNewHeadding.Name = "lblAddNewHeadding";
+            this.lblAddNewHeadding.Size = new System.Drawing.Size(185, 31);
+            this.lblAddNewHeadding.TabIndex = 0;
+            this.lblAddNewHeadding.Text = "All Superheroes";
             // 
             // dataGridViewHeroes
             // 
@@ -122,6 +200,7 @@
             this.dataGridViewHeroes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewHeroes.Size = new System.Drawing.Size(939, 328);
             this.dataGridViewHeroes.TabIndex = 1;
+            this.dataGridViewHeroes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHeroes_CellContentClick);
             // 
             // colHeroID
             // 
@@ -191,6 +270,8 @@
             this.colDelete.HeaderText = "Delete";
             this.colDelete.Name = "colDelete";
             this.colDelete.ReadOnly = true;
+            this.colDelete.Text = "Delete";
+            this.colDelete.UseColumnTextForButtonValue = true;
             this.colDelete.Width = 60;
             // 
             // colEdit
@@ -200,6 +281,8 @@
             this.colEdit.HeaderText = "Edit";
             this.colEdit.Name = "colEdit";
             this.colEdit.ReadOnly = true;
+            this.colEdit.Text = "Edit";
+            this.colEdit.UseColumnTextForButtonValue = true;
             this.colEdit.Width = 60;
             // 
             // pnlAddHeroTop
@@ -307,9 +390,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colExamScore;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn colThreatLevel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDelete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEdit;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewButtonColumn colDelete;
+        private System.Windows.Forms.DataGridViewButtonColumn colEdit;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
