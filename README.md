@@ -1,8 +1,11 @@
 # PRG282-Sky_High_Super_Hero_Academy
 PRG282 Project
 
+## Mock Data
 
-## For mock data use this in the in the superheroes.txt:
+Use the following in your `superheroes.txt` file:
+
+```
 H01|Will Stronghold|15|Super Strength AND Flight|78|A-Rank|Midterm Madness
 H02|Layla Williams|15|Plant Manipulation|85|S-Rank|Finals Week
 H03|Warren Peace|16|Pyrokinesis|90|S-Rank|Finals Week
@@ -18,3 +21,6 @@ H12|Coach Boomer|40|Sound Manipulation|82|S-Rank|Finals Week
 H13|Royal Pain|17|Mind Control AND Illusion|100|S-Rank|Finals Week
 H14|The Commander|40|Super Strength|91|S-Rank|Finals Week
 H15|Jetstream|18|Flight|89|S-Rank|Finals Week
+```
+
+
