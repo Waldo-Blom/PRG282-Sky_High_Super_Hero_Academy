@@ -145,7 +145,7 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
                         try
                         {
                             // Create a new instance so rank/threat are recalculated from exam score
-                            var updated = new Superhero(existing.HeroID, editForm.HeroName, newAge, editForm.HeroSuperpower, newExam);
+                            Superhero updated = new Superhero(existing.HeroID, editForm.HeroName, newAge, editForm.HeroSuperpower, newExam);
                             fileHandler.UpdateSuperhero(existing.HeroID, updated);
                             LoadFromFile();
                         }

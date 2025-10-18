@@ -82,9 +82,9 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
 
             try
             {
-                var hero = new Superhero(id, name, age, superpower, examScore);
+                Superhero hero = new Superhero(id, name, age, superpower, examScore);
 
-                var handler = new Superhero_FileHandler();
+                Superhero_FileHandler handler = new Superhero_FileHandler();
 
                 // Check if hero exists already
                 var existing = handler.ReadAllSuperheroes()

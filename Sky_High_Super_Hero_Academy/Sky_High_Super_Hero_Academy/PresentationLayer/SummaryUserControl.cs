@@ -27,8 +27,8 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
 
                 // Update labels
                 lblTotalNum.Text = data.TotalHeroes.ToString();
-                lblAVGAgeNum.Text = data.AverageAge.ToString();
-                lblAVGExamNum.Text = data.AverageExamScore.ToString();
+                lblAVGAgeNum.Text = data.AverageAge.ToString("0.00"); // 0.00 to format to 2 decimal places
+                lblAVGExamNum.Text = data.AverageExamScore.ToString("0.00"); // 0.00 to format to 2 decimal places
                 lblSRankNum.Text = data.SRankCount.ToString();
                 lblARankNum.Text = data.ARankCount.ToString();
                 lblBRankNum.Text = data.BRankCount.ToString();

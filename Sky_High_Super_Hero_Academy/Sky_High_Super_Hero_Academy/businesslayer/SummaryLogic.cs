@@ -19,7 +19,7 @@ namespace Sky_High_Super_Hero_Academy.BusinessLayer
     {
         internal SummaryData CalculateSummary(List<Superhero> heroes)
         {
-            var data = new SummaryData();
+            SummaryData data = new SummaryData();
 
             if (heroes == null || heroes.Count == 0)
             {
