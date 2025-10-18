@@ -85,23 +85,19 @@ namespace Sky_High_Super_Hero_Academy.BusinessLayer
         {
             if (Rank == "S-Rank")
             {
-                ThreatLevel = "Catastrophic";
+                ThreatLevel = "Finals Week";
             }
             else if (Rank == "A-Rank")
             {
-                ThreatLevel = "High";
+                ThreatLevel = "Midterm Madness";
             }
             else if (Rank == "B-Rank")
             {
-                ThreatLevel = "Moderate";
+                ThreatLevel = "Group Project Gone Wrong";
             }
             else if (Rank == "C-Rank")
             {
-                ThreatLevel = "Low";
-            }
-            else
-            {
-                ThreatLevel = "Unknown";
+                ThreatLevel = "Pop Quiz";
             }
         }
 

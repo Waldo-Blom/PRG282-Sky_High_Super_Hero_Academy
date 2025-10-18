@@ -37,8 +37,8 @@
             this.lblBrandName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.pnlContent = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTop.SuspendLayout();
@@ -52,9 +52,10 @@
             this.pnlNav.Controls.Add(this.btnViewAll);
             this.pnlNav.Controls.Add(this.bntAddHero);
             this.pnlNav.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlNav.Location = new System.Drawing.Point(507, 0);
+            this.pnlNav.Location = new System.Drawing.Point(677, 0);
+            this.pnlNav.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(675, 74);
+            this.pnlNav.Size = new System.Drawing.Size(900, 91);
             this.pnlNav.TabIndex = 0;
             // 
             // btnAbout
@@ -63,9 +64,10 @@
             this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAbout.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnAbout.ForeColor = System.Drawing.Color.White;
-            this.btnAbout.Location = new System.Drawing.Point(510, 14);
+            this.btnAbout.Location = new System.Drawing.Point(680, 17);
+            this.btnAbout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(135, 40);
+            this.btnAbout.Size = new System.Drawing.Size(180, 49);
             this.btnAbout.TabIndex = 3;
             this.btnAbout.Text = "About";
             this.btnAbout.UseVisualStyleBackColor = false;
@@ -77,9 +79,10 @@
             this.btnSummary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSummary.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnSummary.ForeColor = System.Drawing.Color.White;
-            this.btnSummary.Location = new System.Drawing.Point(350, 14);
+            this.btnSummary.Location = new System.Drawing.Point(467, 17);
+            this.btnSummary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSummary.Name = "btnSummary";
-            this.btnSummary.Size = new System.Drawing.Size(135, 40);
+            this.btnSummary.Size = new System.Drawing.Size(180, 49);
             this.btnSummary.TabIndex = 2;
             this.btnSummary.Text = "Summary";
             this.btnSummary.UseVisualStyleBackColor = false;
@@ -91,9 +94,10 @@
             this.btnViewAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnViewAll.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnViewAll.ForeColor = System.Drawing.Color.White;
-            this.btnViewAll.Location = new System.Drawing.Point(190, 14);
+            this.btnViewAll.Location = new System.Drawing.Point(253, 17);
+            this.btnViewAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnViewAll.Name = "btnViewAll";
-            this.btnViewAll.Size = new System.Drawing.Size(135, 40);
+            this.btnViewAll.Size = new System.Drawing.Size(180, 49);
             this.btnViewAll.TabIndex = 1;
             this.btnViewAll.Text = "View All";
             this.btnViewAll.UseVisualStyleBackColor = false;
@@ -106,9 +110,10 @@
             this.bntAddHero.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bntAddHero.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntAddHero.ForeColor = System.Drawing.Color.White;
-            this.bntAddHero.Location = new System.Drawing.Point(32, 14);
+            this.bntAddHero.Location = new System.Drawing.Point(43, 17);
+            this.bntAddHero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bntAddHero.Name = "bntAddHero";
-            this.bntAddHero.Size = new System.Drawing.Size(135, 40);
+            this.bntAddHero.Size = new System.Drawing.Size(180, 49);
             this.bntAddHero.TabIndex = 0;
             this.bntAddHero.Text = "Add hero";
             this.bntAddHero.UseVisualStyleBackColor = false;
@@ -118,11 +123,12 @@
             // 
             this.lblBrandName.AutoSize = true;
             this.lblBrandName.BackColor = System.Drawing.Color.Transparent;
-            this.lblBrandName.Font = new System.Drawing.Font("Rockwell Nova Cond", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrandName.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBrandName.ForeColor = System.Drawing.Color.White;
-            this.lblBrandName.Location = new System.Drawing.Point(195, 2);
+            this.lblBrandName.Location = new System.Drawing.Point(235, 2);
+            this.lblBrandName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBrandName.Name = "lblBrandName";
-            this.lblBrandName.Size = new System.Drawing.Size(292, 42);
+            this.lblBrandName.Size = new System.Drawing.Size(327, 37);
             this.lblBrandName.TabIndex = 1;
             this.lblBrandName.Text = "Sky High Heroes Academy";
             // 
@@ -131,9 +137,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.ErrorImage = null;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(26, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(35, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(144, 73);
+            this.pictureBox1.Size = new System.Drawing.Size(192, 90);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -147,36 +154,40 @@
             this.pnlTop.Controls.Add(this.pnlNav);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1184, 76);
+            this.pnlTop.Size = new System.Drawing.Size(1579, 93);
             this.pnlTop.TabIndex = 2;
-            // 
-            // pnlContent
-            // 
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(0, 76);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1184, 585);
-            this.pnlContent.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Rockwell Nova Cond", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label1.Location = new System.Drawing.Point(207, 44);
+            this.label1.Location = new System.Drawing.Point(276, 54);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "A super hero mangement system for all your needs";
             // 
+            // pnlContent
+            // 
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(0, 93);
+            this.pnlContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1579, 721);
+            this.pnlContent.TabIndex = 6;
+            // 
             // MainApplciation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(1579, 814);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlTop);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "MainApplciation";
             this.Text = "Form1";
