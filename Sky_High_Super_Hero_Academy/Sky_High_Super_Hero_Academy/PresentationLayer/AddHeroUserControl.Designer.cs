@@ -89,6 +89,7 @@
             this.btnClear.TabIndex = 17;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAddSuperhero
             // 
@@ -102,6 +103,7 @@
             this.btnAddSuperhero.TabIndex = 16;
             this.btnAddSuperhero.Text = "Add Superhero";
             this.btnAddSuperhero.UseVisualStyleBackColor = false;
+            this.btnAddSuperhero.Click += new System.EventHandler(this.btnAddSuperhero_Click);
             // 
             // txtInfo
             // 
@@ -183,6 +185,7 @@
             this.txtExamScore.Name = "txtExamScore";
             this.txtExamScore.Size = new System.Drawing.Size(756, 26);
             this.txtExamScore.TabIndex = 9;
+            this.txtExamScore.TextChanged += new System.EventHandler(this.txtExamScore_TextChanged);
             // 
             // txtAge
             // 
