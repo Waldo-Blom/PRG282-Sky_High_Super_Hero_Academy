@@ -13,7 +13,6 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
         // Event handler for Generate Summary button
         private void btnGenerateSummary_Click(object sender, EventArgs e)
         {
-            // Example logic - replace with your actual data calculations
 
             // Update total heroes
             lblTotalNum.Text = "10";
@@ -30,7 +29,7 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
             lblBRankNum.Text = "3";
             lblCRankNum.Text = "2";
 
-            // Optional: show a message confirming the summary has been generated
+            // show a message confirming the summary has been generated
             MessageBox.Show("Summary has been generated successfully!", "Summary", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
