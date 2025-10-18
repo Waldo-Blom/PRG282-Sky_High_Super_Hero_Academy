@@ -1,7 +1,9 @@
 # To-Do Design
 ##
-* [ ] Add search bar to the ViewAllSuperheroes screen
-* [ ] New UserContorl for editing of heroes -> fix the cancel edit causes that you are not able to go back to the rest of the options in the forms
+* [ ] Deployments section do
+* [ ] Create proper README (Include a Why SKY high section to explain why our name is different)
+* [ ] Test on AVD
+* [ ] Change formmatting for the Datagrid view to make Rank and Threat level easier to read
 
 ## Overall
 
