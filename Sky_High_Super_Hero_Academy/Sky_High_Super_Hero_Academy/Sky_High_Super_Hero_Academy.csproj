@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -49,6 +49,11 @@
     <Compile Include="PresentationLayer\EditHeroForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BusinessLayer\Superhero.cs" />
+    <Compile Include="DataAccessLayer\Superhero_FileHandler.cs" />
+    <Compile Include="PresentationLayer\Superhero_FormatHandler.cs" />
+    <Compile Include="BusinessLayer\SummaryLogic.cs" />
+    <Compile Include="DataAccessLayer\Summary_FileHandler.cs" />
     <Compile Include="PresentationLayer\MainApplciation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +78,12 @@
     <Compile Include="PresentationLayer\AboutUserControl.Designer.cs">
       <DependentUpon>AboutUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\EditHeroUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\EditHeroUserControl.Designer.cs">
+      <DependentUpon>EditHeroUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\ViewAllUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\AddHeroUserControl.resx">
       <DependentUpon>AddHeroUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\EditHeroUserControl.resx">
+      <DependentUpon>EditHeroUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\MainApplciation.resx">
       <DependentUpon>MainApplciation.cs</DependentUpon>
@@ -118,9 +132,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BusinessLayer\" />
-    <Folder Include="DataAccessLayer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

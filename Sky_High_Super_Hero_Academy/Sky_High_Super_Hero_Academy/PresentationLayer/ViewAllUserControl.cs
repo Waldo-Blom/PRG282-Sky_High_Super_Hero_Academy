@@ -216,5 +216,63 @@ namespace Sky_High_Super_Hero_Academy.PresentationLayer
             public string Rank { get; set; }
             public string ThreatLevel { get; set; }
         }
+
+        private void txtSearch_MouseEnter(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txtSearch_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewHeroes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ignore header clicks or invalid rows
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            // Identify what column was clicked
+            var clickedColumn = dataGridViewHeroes.Columns[e.ColumnIndex];
+
+            // Check if the Edit column was clicked
+            if (clickedColumn.Name == "colEdit")
+            {
+                // Get the hero's data from the row
+                string heroId = dataGridViewHeroes.Rows[e.RowIndex].Cells["colHeroID"].Value.ToString();
+                string heroName = dataGridViewHeroes.Rows[e.RowIndex].Cells["colName"].Value.ToString();
+                string heroAge = dataGridViewHeroes.Rows[e.RowIndex].Cells["colAge"].Value.ToString();
+                string heroSuperpower = dataGridViewHeroes.Rows[e.RowIndex].Cells["colSuperpower"].Value.ToString();
+                string heroExamScore = dataGridViewHeroes.Rows[e.RowIndex].Cells["colExamScore"].Value.ToString();
+
+                // Create EditHero user control 
+                var editControl = new EditHeroUserControl();
+
+                // Load the hero data into the edit control textboxes
+                editControl.LoadHero(heroId, heroName,heroAge, heroSuperpower, heroExamScore);
+
+                // Add the panel dynamically
+                editControl.Dock = DockStyle.Fill;
+                this.Controls.Add(editControl);
+                editControl.BringToFront();
+            }
+
+            // Check the Delete column was clicked
+            if (clickedColumn.Name == "colDelete") 
+            {
+                //functionality to be implemeted here
+            }
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
     }
 }

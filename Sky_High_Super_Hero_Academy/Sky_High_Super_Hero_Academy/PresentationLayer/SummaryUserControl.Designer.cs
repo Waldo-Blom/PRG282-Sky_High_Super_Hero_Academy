@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SummaryUserControl));
             this.pnlAddHero = new System.Windows.Forms.Panel();
+            this.btnGenerateSummary = new System.Windows.Forms.Button(); // ✅ NEW BUTTON ADDED
             this.pnlAddHeroTop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblHeadingSubscript = new System.Windows.Forms.Label();
@@ -66,6 +67,7 @@
             // 
             this.pnlAddHero.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlAddHero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(40)))), ((int)(((byte)(58)))));
+            this.pnlAddHero.Controls.Add(this.btnGenerateSummary); // ✅ BUTTON ADDED TO PANEL
             this.pnlAddHero.Controls.Add(this.pnlAVGAge);
             this.pnlAddHero.Controls.Add(this.pnlAVGExam);
             this.pnlAddHero.Controls.Add(this.pnlHeroesRank);
@@ -73,8 +75,23 @@
             this.pnlAddHero.Controls.Add(this.pnlAddHeroTop);
             this.pnlAddHero.Location = new System.Drawing.Point(120, 65);
             this.pnlAddHero.Name = "pnlAddHero";
-            this.pnlAddHero.Size = new System.Drawing.Size(945, 369);
+            this.pnlAddHero.Size = new System.Drawing.Size(945, 420); // increased height to fit button
             this.pnlAddHero.TabIndex = 3;
+            // 
+            // btnGenerateSummary
+            // 
+            this.btnGenerateSummary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(132)))));
+            this.btnGenerateSummary.FlatAppearance.BorderSize = 0;
+            this.btnGenerateSummary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerateSummary.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerateSummary.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGenerateSummary.Location = new System.Drawing.Point(760, 320);
+            this.btnGenerateSummary.Name = "btnGenerateSummary";
+            this.btnGenerateSummary.Size = new System.Drawing.Size(157, 40);
+            this.btnGenerateSummary.TabIndex = 99;
+            this.btnGenerateSummary.Text = "Generate Summary";
+            this.btnGenerateSummary.UseVisualStyleBackColor = false;
+            this.btnGenerateSummary.Click += new System.EventHandler(this.btnGenerateSummary_Click);
             // 
             // pnlAddHeroTop
             // 
@@ -382,5 +399,6 @@
         private System.Windows.Forms.Label lblCRank;
         private System.Windows.Forms.Label lblSRank;
         private System.Windows.Forms.Label lblHeroesRank;
+        private System.Windows.Forms.Button btnGenerateSummary; // new button field
     }
 }
